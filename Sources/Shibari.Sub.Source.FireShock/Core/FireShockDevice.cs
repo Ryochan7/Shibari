@@ -92,7 +92,8 @@ namespace Shibari.Sub.Source.FireShock.Core
                 Kernel32.CreateFileFlags.FILE_ATTRIBUTE_NORMAL
                 | Kernel32.CreateFileFlags.FILE_FLAG_NO_BUFFERING
                 | Kernel32.CreateFileFlags.FILE_FLAG_WRITE_THROUGH
-                | Kernel32.CreateFileFlags.FILE_FLAG_OVERLAPPED,
+                | Kernel32.CreateFileFlags.FILE_FLAG_OVERLAPPED
+                | Kernel32.CreateFileFlags.FILE_ATTRIBUTE_TEMPORARY,
                 Kernel32.SafeObjectHandle.Null
             );
 

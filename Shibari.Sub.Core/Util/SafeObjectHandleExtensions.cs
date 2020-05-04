@@ -17,13 +17,13 @@ namespace Shibari.Sub.Core.Util
 
             try
             {
-                Kernel32.DeviceIoControl(
+                NativeMethodsShibari.DeviceIoControl(
                     handle,
                     unchecked((int)ioControlCode),
                     inBuffer, inBufferSize, outBuffer, outBufferSize,
                     out bytesReturned, overlapped);
 
-                return Kernel32.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
+                return NativeMethodsShibari.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
             }
             finally
             {
@@ -42,16 +42,16 @@ namespace Shibari.Sub.Core.Util
 
             try
             {
-                int? bytesRead = 0;
+                int bytesRead = 0;
 
-                Kernel32.ReadFile(
+                NativeMethodsShibari.ReadFile(
                     handle,
                     buffer,
                     bufferSize,
                     ref bytesRead,
                     overlapped);
 
-                return Kernel32.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
+                return NativeMethodsShibari.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
             }
             finally
             {
@@ -70,16 +70,16 @@ namespace Shibari.Sub.Core.Util
 
             try
             {
-                int? bytesRead = 0;
+                int bytesRead = 0;
 
-                Kernel32.WriteFile(
+                NativeMethodsShibari.WriteFile(
                     handle,
                     buffer,
                     bufferSize,
                     ref bytesRead,
                     overlapped);
 
-                return Kernel32.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
+                return NativeMethodsShibari.GetOverlappedResult(handle, overlapped, out bytesReturned, true);
             }
             finally
             {
